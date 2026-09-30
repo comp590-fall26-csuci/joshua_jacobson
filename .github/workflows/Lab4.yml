@@ -17,4 +17,4 @@ jobs:
       run: make main
       working-directory: ./lab4
     - name: test
-      run: bash scripts/bigTest.sh
+      run: bash scripts/figTest.sh
