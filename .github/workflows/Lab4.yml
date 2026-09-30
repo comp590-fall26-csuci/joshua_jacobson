@@ -18,3 +18,4 @@ jobs:
       working-directory: ./lab4
     - name: test
       run: bash scripts/figTest.sh
+      working-directory: ./
