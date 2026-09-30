@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./lab4/main
+./../lab4/main
