@@ -14,8 +14,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: make
-      run: cd lab4 | make main
+      run: make main
+      working-directory: ./lab4
     - name: test
       run: ./main
+      working-directory: ./lab4
     
       
