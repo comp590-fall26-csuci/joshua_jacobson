@@ -63,7 +63,6 @@ UTEST(Fibonacci, GoldenRatio)
 	const double multiplier = pow(10.0, 6);
 	double golden_ratio_rounded = round(golden_ratio_approx(0) * multiplier) / multiplier;
 	ASSERT_EQ(golden_ratio_rounded, 1.618034);
-	ASSERT_EQ(golden_ratio_approx(0), 1.618034);
 }
 
 UTEST_MAIN()
