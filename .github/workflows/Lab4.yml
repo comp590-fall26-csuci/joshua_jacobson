@@ -17,5 +17,5 @@ jobs:
       working-directory: ./lab4
       run: make main
     - name: test
-      working-directory: ./scripts
-      run: bash ./fibTest.sh
+      working-directory: ./lab4
+      run: ./main
