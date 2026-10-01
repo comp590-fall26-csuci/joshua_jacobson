@@ -1,8 +1,8 @@
 main: main.o fibonacci.o
-	cc -Iheaders main.o fibonacci.o -o main
+	cc -Iheaders main.o fibonacci.o -o main -lm
 
 main.o: main.c
-	cc -c -Iheaders main.c -o main.o
+	cc -c -Iheaders main.c -o main.o -lm
 
 fibonacci.o: fibonacci.c
 	cc -c -Iheaders fibonacci.c -o fibonacci.o
