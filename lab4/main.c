@@ -3,6 +3,7 @@
 
 int main(void) {
     int term = 10;
+    oierihwef
     printf("The %dth Fibonacci number is %d\n", term, fibonacci(term));
     printf("The theoretical Golden Ratio is %f\n", golden_ratio_approx(term));
     return 0;
