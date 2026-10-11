@@ -7,6 +7,12 @@ on:
     branches: [ "main" ]
 
 jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: semgrep
+        run: semgrep scan --config p/default --config p/security-audit --error
   build:
 
     runs-on: ubuntu-latest
