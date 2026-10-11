@@ -19,5 +19,7 @@ jobs:
     - name: test
       working-directory: ./scripts
       run: bash ./fibTest.sh
+    - name: Install Semgrep
+      run: pip install semgrep
     - name: Run Semgrep Scan
       run: semgrep scan --config p/default --error
