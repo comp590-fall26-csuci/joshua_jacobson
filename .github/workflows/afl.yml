@@ -15,7 +15,8 @@ jobs:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
     - name: pull afl++
       run: docker pull aflplusplus/aflplusplus
-    - name: build
-      run: afl-cc -o dvcp lab5/dvcp.c
+    - name: run afl++
+      run: docker run -ti -v ./lab5/dvcp.c aflplusplus/aflplusplus
+      #run: afl-cc -o dvcp lab5/dvcp.c
     #- name: run afl++
       #run: ./afl-fuzz -i
