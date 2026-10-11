@@ -16,7 +16,7 @@ jobs:
     - name: pull afl++
       run: docker pull aflplusplus/aflplusplus
     - name: run afl++
-      run: docker run -ti -v ./lab5/dvcp.c aflplusplus/aflplusplus
+      run: docker run -ti -v /location/of/your/target:/src aflplusplus/aflplusplus
       #run: afl-cc -o dvcp lab5/dvcp.c
     #- name: run afl++
       #run: ./afl-fuzz -i
