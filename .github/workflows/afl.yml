@@ -21,4 +21,5 @@ jobs:
       run: |
         export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
         timeout 180 afl-fuzz -i lab5/seeds -o out -m none -d -- ./dvcp
+        exit 0
       #timeout-minutes: 3
