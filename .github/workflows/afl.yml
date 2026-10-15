@@ -17,8 +17,12 @@ jobs:
       run: sudo apt install -y afl++
     - name: build afl++
       run: afl-cc -o dvcp lab5/dvcp.c
+    - name: setup seeds
+      run: |
+        mkdir seeds
+        for i in {0..4}; do dd if=/dev/urandom of=seed=$i bs=64 count=10; done
     - name: run afl++
       run: |
         export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
-        timeout --preserve-status 10 afl-fuzz -i lab5/seeds -o out -m none -d -- ./dvcp
+        timeout --preserve-status 10 afl-fuzz -i seeds -o out -m none -d -- ./dvcp
 
