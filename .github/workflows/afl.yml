@@ -16,8 +16,8 @@ jobs:
     - name: pull afl++
       run: sudo apt install -y afl++
       #run: docker pull aflplusplus/aflplusplus
-    #- name: run afl++
+    - name: build afl++
       #run: docker run -ti -v /location/of/your/target:/src aflplusplus/aflplusplus
-      #run: afl-cc -o dvcp lab5/dvcp.c
+      run: afl-cc -o dvcp lab5/dvcp.c
     #- name: run afl++
       #run: ./afl-fuzz -i
