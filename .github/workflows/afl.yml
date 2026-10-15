@@ -25,5 +25,5 @@ jobs:
     - name: run afl++
       run: |
         export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
-        timeout --preserve-status 10 afl-fuzz -i seeds -o out -m none -d -- ./dvcp
+        timeout --preserve-status 180 afl-fuzz -i seeds -o out -m none -d -- ./dvcp
 
