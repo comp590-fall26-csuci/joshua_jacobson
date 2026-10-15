@@ -20,6 +20,5 @@ jobs:
     - name: run afl++
       run: |
         export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
-        timeout 180 afl-fuzz -i lab5/seeds -o out -m none -d -- ./dvcp
-        exit 0
-      #timeout-minutes: 3
+        timeout 180 afl-fuzz -i lab5/seeds -o out -m none -d -- ./dvcp || code=$?
+        if [[ $code -ne 124 && $code -ne 0]]; then exit $code; fi
