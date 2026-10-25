@@ -1,0 +1,26 @@
+- name: Do Lab 6 Work
+  hosts: local
+  become: true
+
+  tasks:
+    - name: Install asciinema
+      apt:
+        name: asciinema
+        state: present
+        update_cache: yes
+
+    - name: Install apache2
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+
+    - name: Start Apache
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+
+    - name: Print a message
+      ansible.builtin.debug:
+        msg: "Lab6 work done!"
