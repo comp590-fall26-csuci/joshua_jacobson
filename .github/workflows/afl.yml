@@ -1,0 +1,28 @@
+name: AFL++
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  fuzz:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+    - name: pull afl++
+      run: sudo apt install -y afl++
+    - name: build dvcp
+      run: AFL_HARDEN=1 afl-cc -fsanitize=address -fsanitize=undefined -o dvcp lab5/dvcp.c
+    - name: setup input
+      run: |
+        mkdir input
+        echo "IMG" >input/1.txt
+    - name: run afl++
+      run: |
+        export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
+        timeout --preserve-status 180 afl-fuzz -i input -o out -m none -- ./dvcp @@
+
